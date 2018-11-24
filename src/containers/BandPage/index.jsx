@@ -3,19 +3,27 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { getBandList } from "../../redux/actions/band_actions";
-import { BandList } from "../../components/BandList";
+import  BandList from "../../components/BandList";
 import "./style.less";
 
 class BandPage extends React.Component {
 
-  render() {
-   if(this.props.bands.loading ){
-      return(<div />)
-    }
+  constructor(props){
+    super(props); 
+  }
+  componentWillMount(){
+      this.props.actions.getBandList();
+  }
 
+  render() {
+   if(this.props.bands.loading){
+      return(
+        <div>Loading </div>
+      )
+    }
     return (
       <div>
-        <BandList bands={this.props.bands} />
+        <BandList bands={this.props.bands.bands} />
       </div>
     );
   }

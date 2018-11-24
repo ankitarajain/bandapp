@@ -8,11 +8,22 @@ class BandList extends React.Component {
     super(props);
   }
 
+  createCard(data){
+    return (
+      <div  key={data.id} className="card" >
+        <img className="card-img" src={data.image} alt={data.name} />
+        <div className="card-body">
+          <h3 className="card-title">{data.name}</h3>
+          <p className="card-text">{data.description}</p>
+        </div>
+      </div>
+    )
+  }
   render() {
-  
+    const bandListJsx = this.props.bands.map(band=>this.createCard(band))
     return (
       <div className="bandlist-component">
-        this is bandlist
+        {bandListJsx}
       </div>
     );
   }

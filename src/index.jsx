@@ -9,6 +9,7 @@ import routes from "./routes";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { APP_NAME } from "../settings";
+import BandPage from "./containers/BandPage";
 import "./style.less";
 
 if (!global._babelPolyfill) {
@@ -16,7 +17,7 @@ if (!global._babelPolyfill) {
 }
 /* eslint-enable */
 
-const rootElement = document.querySelector(`#${APP_NAME}`);
+const rootElement = document.querySelector(`#root`);
 if (rootElement) {
   ReactDOM.render(
     <Provider store={store}>

@@ -5,9 +5,9 @@ const { CLIENTJS } = require("./settings.js");
 const wbConfig = {
   entry: ["./src/index.jsx"],
   output: {
-    path: __dirname + "/dist/client",
-    publicPath: "/public",
-    filename: `${CLIENTJS}.js`
+    path: __dirname + "/build",
+    publicPath: "/assets/",
+    filename: `bundle.js`
   },
 
   plugins: [

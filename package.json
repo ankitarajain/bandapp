@@ -5,7 +5,7 @@
   "description": "band-app",
   "main": "dist/client/index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --content-base build/",
     "dev": "./node_modules/babel-cli/bin/babel-node.js fragment.js --exec babel-node --presets es2015",
     "build": "webpack",
     "lint": "node_modules/eslint/bin/eslint.js --fix --ext .js,.jsx .",

@@ -8,7 +8,7 @@ const BUILD_VERSION = process.env.BUILD_VERSION || "local";
 const DATA_ENVIRONMENT = ""
 let { APP_API } = process.env;
 
- APP_API = "http://localhost:4040";
+ APP_API = "/data";
 
 const settings = {
   DEV_MODE,

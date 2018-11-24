@@ -3,18 +3,20 @@ import { getBands } from '../api';
 
 const getBandList = () => dispatch => {
   dispatch({
-    type: types.BAND_LOADING
+    type: types.BANDS_LOADING
   });
   return getBands().then(
     bands => {
+      debugger;
       dispatch({
-        type: types.BAND_SUCCESSFULL,
+        type: types.BANDS_SUCCESSFULL,
         payload:bands
       });
     },
     err => {
+      debugger;
       dispatch({
-        type: types.BAND_FAILED,
+        type: types.BANDS_FAILED,
         error: err
       });
     }

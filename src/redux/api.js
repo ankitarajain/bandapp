@@ -3,12 +3,12 @@ import { APP_API } from "../../settings";
 
 
  let URI = {
-  band_uri:'/api/bands',
-  concert_uri:'/api/concerts'
+  band_uri:'bands.json',
+  concert_uri:'concerts.json'
 }
   
 const ajaxCall = (uri) => {
-  const url = `${APP_API}${uri}`;
+  const url = `${APP_API}/${uri}`;
   return new Promise((resolve, reject) => {
     superagent
       .get(url)

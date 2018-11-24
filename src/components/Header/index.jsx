@@ -11,7 +11,7 @@ class Header extends React.Component {
     return (
       <div className="app-header-component">
         <DocumentTitle title="Band Application " />
-        <h3 className="title">This is header</h3>
+        <h3 className="title">Band Application</h3>
       </div>
     );
   }
