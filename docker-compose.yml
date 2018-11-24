@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+
+  react-app:
+    container_name: ankitaApp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/usr/src/ankita'
+      - '/usr/src/ankita/node_modules'
+    ports:
+      - '8080:8080'
