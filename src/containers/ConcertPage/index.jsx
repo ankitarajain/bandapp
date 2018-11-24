@@ -3,26 +3,34 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { getConcertsList } from "../../redux/actions/concert_actions";
-import { BandList } from "../../components/BandList";
+import  ConcertList  from "../../components/ConcertList";
 import "./style.less";
 
 class ConcertPage extends React.Component {
 
+  constructor(props){
+    super(props);   
+  }
+  componentWillMount(){
+      this.props.actions.getConcertsList();
+  }
+
   render() {
+    console.log("his.props",this.props)
    if(this.props.concerts.loading ){
       return(<div />)
     }
 
     return (
       <div>
-       this is concert page
+          <ConcertList concerts={this.props.concerts.concerts}  />
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  concerts : state.user
+  concerts : state.concerts
 });
 
 const mapDispatchToProps = dispatch => ({

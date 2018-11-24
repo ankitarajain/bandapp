@@ -1,14 +1,14 @@
 import * as types from './action-types';
 import { getConcerts } from '../api';
 
-const getConcertsList = (ids) => dispatch => {
+const getConcertsList = () => dispatch => {
   dispatch({
     type: types.CONCERTS_LOADING
   });
-  return getConcerts(ids).then(
+  return getConcerts().then(
     concerts => {
       dispatch({
-        concerts: types.CONCERTS_SUCCESSFULL,
+        type: types.CONCERTS_SUCCESSFULL,
         payload:concerts
       });
     },

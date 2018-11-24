@@ -6,7 +6,7 @@ const wbConfig = {
   entry: ["./src/index.jsx"],
   output: {
     path: __dirname + "/build",
-    publicPath: "/assets/",
+    publicPath: '/',
     filename: `bundle.js`
   },
 
@@ -37,7 +37,10 @@ const wbConfig = {
         use: ["style-loader", "css-loader", "typed-css-modules-loader"]
       }
     ]
-  }
+  },
+  devServer: {
+    historyApiFallback: true,
+  },
 };
 
 module.exports = wbConfig;

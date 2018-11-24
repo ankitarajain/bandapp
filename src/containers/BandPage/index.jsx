@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom'
 import { bindActionCreators } from "redux";
-import { getBandList,selectBand } from "../../redux/actions/band_actions";
+import { getBandList,selectBand ,setFavBands} from "../../redux/actions/band_actions";
 import  BandList from "../../components/BandList";
 import "./style.less";
 
@@ -18,6 +19,15 @@ class BandPage extends React.Component {
   onBandSelected(data){
     this.props.actions.selectBand(data);
   }
+  onSubmit(){
+    // this.props.actions.setFavBands(this.props.bands.selected).then((data)=>{
+    //   debugger;
+    // },()=>{
+    //   debugger;
+      
+    // })
+    window.location.hash="#/concerts"
+  }
   render() {
     console.log(this.props.bands.selected)
    if(this.props.bands.loading){
@@ -32,19 +42,23 @@ class BandPage extends React.Component {
         <button   
           type="button" 
           className={"btn btn-raised btn-primary submit-btn " + (this.props.bands.selected.length < 2 ? 'disabled' : '')}
+          onClick={this.onSubmit.bind(this)}
         >
-          Add to Faviourites</button>
+         
+       Check Concerts
+          </button>
+          
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  bands : state.user
+  bands : state.bands
 });
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(Object.assign({}, { getBandList,selectBand }), dispatch)
+  actions: bindActionCreators(Object.assign({}, { getBandList,selectBand,setFavBands }), dispatch)
 });
 
 BandPage.defaultProps = {

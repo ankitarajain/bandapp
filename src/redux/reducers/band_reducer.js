@@ -4,7 +4,8 @@ const defaultState = {
   bands: [],
   loading: false,
   error: null,
-  selected:[]
+  selected:[],
+  faviourites:[]
 };
 
 export default function bandReducer(state = defaultState, action) {
@@ -25,6 +26,25 @@ export default function bandReducer(state = defaultState, action) {
       return Object.assign({}, state, {
         loading: false,
         bands: null,
+        error: {
+          statusCode: action.error.status,
+          body: action.error.message || action.error.response.body
+        }
+      });
+    }
+    case types.FAV_BAND_STARTED: {
+      // return Object.assign({}, state, {
+      //   loading: true
+      // });
+    }
+    case types.FAV_BAND_SUBMITTED: {
+      return Object.assign({}, state, {
+        faviourites: action.payload,
+        error: null
+      });
+    }
+    case types.FAV_BAND_FAILED: {
+      return Object.assign({}, state, {
         error: {
           statusCode: action.error.status,
           body: action.error.message || action.error.response.body

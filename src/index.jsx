@@ -3,7 +3,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import store from "redux/store";
 import routes from "./routes";
 import Header from "./components/Header";
@@ -21,13 +21,13 @@ const rootElement = document.querySelector(`#root`);
 if (rootElement) {
   ReactDOM.render(
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter>
         <div className="UIContainer">
           <Header />
           <div className="app-content">{routes}</div>
           <Footer />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>,
     rootElement
   );

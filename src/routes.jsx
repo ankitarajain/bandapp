@@ -5,7 +5,7 @@ import ConcertPage from "./containers/ConcertPage";
 
 const routes = (
   <div>
-    <Route path="/" component={BandPage} />
+    <Route path="/bands" component={BandPage} />
     <Route path="/concerts" component={ConcertPage} />
   </div>
 );
