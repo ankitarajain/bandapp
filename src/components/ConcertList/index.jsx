@@ -3,13 +3,8 @@ import PropTypes from "prop-types";
 import "./style.less";
 
 class ConcertList extends React.Component {
-
-  constructor(props) {
-    super(props);
-  }
-
   
-  createCard(concert){
+  static createCard(concert){
     return (
       <div
         key={concert.id}
@@ -26,7 +21,7 @@ class ConcertList extends React.Component {
   }
   render() {
   
-    const concertListJsx = this.props.concerts.map(concert=>this.createCard(concert))
+    const concertListJsx = this.props.concerts.map(concert=>ConcertList.createCard(concert))
     return (
       <div className="concertlist-component">
         {concertListJsx}
@@ -36,12 +31,11 @@ class ConcertList extends React.Component {
 }
 
 ConcertList.defaultProps = {
-  bands: []
+  concerts: []
 };
 
 ConcertList.propTypes = {
-  onClick:PropTypes.func,
-  bands: PropTypes.arrayOf(PropTypes.shape({
+  concerts: PropTypes.arrayOf(PropTypes.shape({
     total_cost: PropTypes.shape({
       id: PropTypes.number,
       name: PropTypes.string,

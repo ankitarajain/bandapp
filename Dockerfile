@@ -15,5 +15,11 @@ RUN npm install
 # add app
 COPY . /usr/ankita
 
+# lint app
+npm run lint
+
+# unit test app
+npm run unit-test
+
 # start app
 CMD npm start

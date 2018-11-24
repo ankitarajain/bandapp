@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom'
 import { bindActionCreators } from "redux";
-import { getBandList,selectBand ,setFavBands} from "../../redux/actions/band_actions";
+import { getBandList,selectBand ,setFavBand} from "../../redux/actions/band_actions";
 import  BandList from "../../components/BandList";
 import "./style.less";
 
@@ -11,6 +10,8 @@ class BandPage extends React.Component {
 
   constructor(props){
     super(props); 
+   this.onBandSelected =  this.onBandSelected.bind(this);
+   this.onSubmit = this.onSubmit.bind(this);
   }
   componentWillMount(){
       this.props.actions.getBandList();
@@ -20,7 +21,8 @@ class BandPage extends React.Component {
     this.props.actions.selectBand(data);
   }
   onSubmit(){
-    // this.props.actions.setFavBands(this.props.bands.selected).then((data)=>{
+    this.props.actions.setFavBand();
+    // this.props.actions.setFavBand(this.props.bands.selected).then((data)=>{
     //   debugger;
     // },()=>{
     //   debugger;
@@ -29,7 +31,6 @@ class BandPage extends React.Component {
     window.location.hash="#/concerts"
   }
   render() {
-    console.log(this.props.bands.selected)
    if(this.props.bands.loading){
       return(
         <div>Loading </div>
@@ -38,11 +39,11 @@ class BandPage extends React.Component {
     return (
       <div className="band-page">
         Please select atleast 2 band to add to favourite.
-        <BandList bands={this.props.bands.bands} onClick={this.onBandSelected.bind(this)} />
+        <BandList bands={this.props.bands.bands} onClick={this.onBandSelected} />
         <button   
           type="button" 
           className={`btn btn-raised btn-primary submit-btn ${  this.props.bands.selected.length < 2 ? 'disabled' : ''}`}
-          onClick={this.onSubmit.bind(this)}
+          onClick={this.onSubmit}
         >
          
        Check Concerts
@@ -58,7 +59,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(Object.assign({}, { getBandList,selectBand,setFavBands }), dispatch)
+  actions: bindActionCreators(Object.assign({}, { getBandList,selectBand,setFavBand }), dispatch)
 });
 
 BandPage.defaultProps = {

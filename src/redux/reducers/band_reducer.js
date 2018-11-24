@@ -36,6 +36,8 @@ export default function bandReducer(state = defaultState, action) {
       // return Object.assign({}, state, {
       //   loading: true
       // });
+      
+      return Object.assign({}, state)
     }
     case types.FAV_BAND_SUBMITTED: {
       return Object.assign({}, state, {

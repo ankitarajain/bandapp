@@ -12,18 +12,21 @@ class BandCard extends React.Component {
     this.onCardSwap = this.onCardSwap.bind(this);
   }
 
-  onSwipeStart(event) {
-    console.log('Start swiping...', event);
-  }
+  // onSwipeStart(event) {
+  //   console.log('Start swiping...', event);
+  // }
  
-  onSwipeMove(position, event) {
-    console.log(`Moved ${position.x} pixels horizontally`, event);
-    console.log(`Moved ${position.y} pixels vertically`, event);
-  }
+  // onSwipeMove(position, event) {
+  //   console.log(`Moved ${position.x} pixels horizontally`, event);
+  //   console.log(`Moved ${position.y} pixels vertically`, event);
+  // }
  
-  onSwipeEnd(event) {
-    console.log('End swiping...', event);
-  }
+  // onSwipeEnd(event) {
+  //   console.log('End swiping...', event);
+  // }
+  // onCardSwap(band){
+
+  // }
   onCardClick(band){
     if(!this.props.onClick){
         return;
@@ -31,12 +34,7 @@ class BandCard extends React.Component {
     this.props.onClick(band)
   }
 
-  onCardSwap(band){
-    // alert("onCardSwap")
-    //  this.props.onClick(band)
-    // this.props.onSwapRight(selected)
-   // this.props.onSwapLeft(selected)
-  }
+ 
 
   render() {
     const band = this.props.data;
@@ -47,8 +45,15 @@ class BandCard extends React.Component {
         onSwipeStart={this.onSwipeStart}
         onSwipeMove={this.onSwipeMove}
         onSwipeEnd={this.onSwipeEnd}
+ 
       >
-        <div  className={` card ${  this.props.selected == true ?"selected":""}`} onClick={()=>{this.onCardClick(band)}}>
+        <div
+          className={` card ${  this.props.selected === true ?"selected":""}`} 
+          onClick={()=>{this.onCardClick(band)}}
+          onKeyPress={()=>{}}
+          role="button"
+          tabIndex={0}
+        >
           <img className="card-img" src={band.image} alt={band.name} />
           <div className="card-body">
             <h3 className="card-title">{band.name}</h3>

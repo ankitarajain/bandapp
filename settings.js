@@ -5,7 +5,6 @@ const DEV_MODE =
   (process.env.NODE_ENV !== "production" || process.env.NODE_ENV !== "staging");
 const SERVER_PORT = process.env.SERVER_PORT || 4040;
 const BUILD_VERSION = process.env.BUILD_VERSION || "local";
-const DATA_ENVIRONMENT = ""
 let { APP_API } = process.env;
 
  APP_API = "/data";

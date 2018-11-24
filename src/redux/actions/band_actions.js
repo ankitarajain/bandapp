@@ -47,6 +47,6 @@ const selectBand = (id) => dispatch =>{
   });
 }
 
-export { getBandList,setFavBands,selectBand };
+export { getBandList,setFavBand,selectBand };
 
 export default getBandList;

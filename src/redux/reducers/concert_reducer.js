@@ -11,7 +11,7 @@ export default function concertReducer(state = defaultState, action) {
     case types.CONCERTS_LOADING: {
       return Object.assign({}, state, {
         loading: true
-      });
+      });    
     }
     case types.CONCERTS_SUCCESSFULL: {
       return Object.assign({}, state, {

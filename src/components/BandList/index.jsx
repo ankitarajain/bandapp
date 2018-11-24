@@ -8,7 +8,6 @@ class BandList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      bands :this.props.bands,
       selected : this.props.bands.faviorites ?this.props.bands.faviorites :[]
     }
     this.onCardClick = this.onCardClick.bind(this);
@@ -18,7 +17,7 @@ class BandList extends React.Component {
 
     const {selected} = this.state;
     const index = selected.indexOf(band.id);
-    if(index == -1){
+    if(index === -1){
       selected.push(band.id)
     }else{
       selected.splice(index, 1);
@@ -50,7 +49,8 @@ class BandList extends React.Component {
 }
 
 BandList.defaultProps = {
-  bands: []
+  bands: [],
+  onClick:()=>{}
 };
 
 BandList.propTypes = {

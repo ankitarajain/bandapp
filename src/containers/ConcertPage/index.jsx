@@ -8,15 +8,11 @@ import "./style.less";
 
 class ConcertPage extends React.Component {
 
-  constructor(props){
-    super(props);   
-  }
   componentWillMount(){
       this.props.actions.getConcertsList();
   }
 
   render() {
-    console.log("his.props",this.props)
    if(this.props.concerts.loading ){
       return(<div />)
     }

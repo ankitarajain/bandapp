@@ -40,8 +40,7 @@ const getBands = ()=>{
    return getCall( uri );
  }
 
- const getConcerts = (ids)=>{
-   console.log(`band ids : ${ids}`)
+ const getConcerts = ()=>{
   const uri = `${URI.concert_uri}`;
    return getCall( uri );
  }
