@@ -2,18 +2,18 @@
 FROM node:9.6.1
 
 # set working directory
-RUN mkdir /usr/src/ankita
-WORKDIR /usr/src/ankita
+RUN mkdir /usr/ankita
+WORKDIR /usr/ankita
 
-# add `/usr/src/app/node_modules/.bin` to $PATH
-ENV PATH /usr/src/ankita/node_modules/.bin:$PATH
+# add `/usr/ankita/node_modules/.bin` to $PATH
+ENV PATH /usr/ankita/node_modules/.bin:$PATH
 
 # install and cache app dependencies
-COPY package.json /usr/src/ankita/package.json
+COPY package.json /usr/ankita/package.json
 RUN npm install
 
 # add app
-COPY . /usr/src/ankita
+COPY . /usr/ankita
 
 # start app
 CMD npm start
