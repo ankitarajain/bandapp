@@ -1,0 +1,68 @@
+[
+    {
+    "id":1,
+    "name": "Tailor Swift", 
+    "description": "",
+    "image":"http://www.highlandradio.com/wp-content/uploads/2017/11/taylor-swift.jpg" 
+},
+        
+    {
+    "id":2,
+    "name": "Selena Gomez",
+    "description": "",
+    "image":"https://www.billboard.com/files/styles/article_main_image/public/media/selena-gomez-2018-r-coach-billboard-1548.jpg" 
+},
+{
+    "id":3,
+    "name": "Rihaana", 
+    "description": "",
+    "image":"https://media.wmagazine.com/photos/5b61c4286c82f7379391b329/4:3/w_1536/GettyImages-973558328.jpg" 
+},
+        
+    {
+    "id":4,
+    "name": "Justin Bieber",
+    "description": "",
+    "image":"https://www.billboard.com/files/media/justin-bieber-nov-2015-billboard-1548.jpg" 
+},
+{
+    "id":5,
+    "name": "Lady gaga", 
+    "description": "",
+    "image":"https://www.billboard.com/files/styles/article_main_image/public/media/lady-gaga-2018-smile-grammy-billboard-a-1548.jpg" 
+},
+        
+    {
+    "id":6,
+    "name": "Britney",
+    "description": "",
+     "image":"https://media.nbcchicago.com/images/652*367/AP_929248251697.jpg" 
+},
+{
+    "id":7,
+    "name": "Pitbull", 
+    "description": "",
+     "image":"https://pmcvariety.files.wordpress.com/2014/05/pitbull-new-years-eve.jpg?w=1000&h=563&crop=1" 
+},
+        
+    {
+    "id":8,
+    "name": "AR Rehman",
+    "description": "",
+    "image":"https://ichef.bbci.co.uk/images/ic/960x540/p02zybmt.jpg" 
+},
+{
+    "id":9,
+    "name": "Atif Aslum", 
+    "description": "",
+    "image":"https://images.firstpost.com/wp-content/uploads/2018/02/atif-aslam-825.jpg" 
+},
+        
+    {
+    "id":10,
+    "name": "Arijit Singh",
+    "description": "",
+    "image":"https://i.ytimg.com/vi/LOXKE8Qea2M/maxresdefault.jpg" 
+}
+        
+  ]
