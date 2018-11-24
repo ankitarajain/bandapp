@@ -33,7 +33,7 @@ export default function bandReducer(state = defaultState, action) {
     }
     case types.BAND_SELECTED: {
       return Object.assign({}, state, {
-        selected : [...state.selected,action.payload]
+        selected : [...action.payload]
       });
     }
     default: {

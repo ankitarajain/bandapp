@@ -2,7 +2,7 @@
 export const BANDS_LOADING = "BAND_LOADING";
 export const BANDS_SUCCESSFULL = "BAND_SUCCESSFULL";
 export const BANDS_FAILED = "BAND_FAILED";
-export const BANDS_SELECTED = "BAND_SELECTED";
+export const BAND_SELECTED = "BAND_SELECTED";
 
 // Concert action types
 export const CONCERTS_LOADING = "CONCERTS_LOADING";

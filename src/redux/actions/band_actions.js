@@ -21,6 +21,12 @@ const getBandList = () => dispatch => {
   );
 };
 
-export { getBandList };
+const selectBand = (id) => dispatch =>{
+  dispatch({
+    type: types.BAND_SELECTED,
+    payload:id
+  });
+}
+export { getBandList,selectBand };
 
 export default getBandList;
