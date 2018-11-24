@@ -41,12 +41,12 @@ class BandPage extends React.Component {
         <BandList bands={this.props.bands.bands} onClick={this.onBandSelected.bind(this)} />
         <button   
           type="button" 
-          className={"btn btn-raised btn-primary submit-btn " + (this.props.bands.selected.length < 2 ? 'disabled' : '')}
+          className={`btn btn-raised btn-primary submit-btn ${  this.props.bands.selected.length < 2 ? 'disabled' : ''}`}
           onClick={this.onSubmit.bind(this)}
         >
          
        Check Concerts
-          </button>
+        </button>
           
       </div>
     );

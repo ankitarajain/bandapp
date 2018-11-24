@@ -7,7 +7,6 @@ import { HashRouter } from "react-router-dom";
 import store from "redux/store";
 import routes from "./routes";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 import { APP_NAME } from "../settings";
 import BandPage from "./containers/BandPage";
 import "./style.less";
@@ -25,7 +24,6 @@ if (rootElement) {
         <div className="UIContainer">
           <Header />
           <div className="app-content">{routes}</div>
-          <Footer />
         </div>
       </HashRouter>
     </Provider>,

@@ -2,7 +2,7 @@ import superagent from "superagent";
 import { APP_API } from "../../settings";
 
 
- let URI = {
+ const URI = {
   band_uri:'bands.json',
   concert_uri:'concerts.json'
 }
@@ -41,14 +41,14 @@ const getBands = ()=>{
  }
 
  const getConcerts = (ids)=>{
-   console.log("band ids : "+ids)
+   console.log(`band ids : ${ids}`)
   const uri = `${URI.concert_uri}`;
    return getCall( uri );
  }
 
  const setFavBands = (band_ids)=>{
  const uri = `${URI.concert_uri}`;
-  return postCall( uri,{band_ids:band_ids} );
+  return postCall( uri,{band_ids} );
 }
 
  

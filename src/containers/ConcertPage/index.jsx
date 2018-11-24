@@ -23,7 +23,7 @@ class ConcertPage extends React.Component {
 
     return (
       <div>
-          <ConcertList concerts={this.props.concerts.concerts}  />
+        <ConcertList concerts={this.props.concerts.concerts}  />
       </div>
     );
   }

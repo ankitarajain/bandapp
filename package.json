@@ -49,13 +49,11 @@
     "react-resize-detector": "2.2.0",
     "react-router": "4.2.0",
     "react-router-dom": "4.2.2",
-    "react-table": "^6.8.6",
     "react-time": "^4.3.0",
     "redux": "3.7.2",
     "redux-immutable-state-invariant": "2.1.0",
     "redux-thunk": "2.2.0",
-    "superagent": "3.8.2",
-    "swagger-mock-api": "^1.6.0"
+    "superagent": "3.8.2"
   },
   "devDependencies": {
     "@types/react-table": "^6.7.12",

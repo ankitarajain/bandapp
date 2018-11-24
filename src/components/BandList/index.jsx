@@ -16,7 +16,7 @@ class BandList extends React.Component {
 
   onCardClick(band){
 
-    let {selected} = this.state;
+    const {selected} = this.state;
     const index = selected.indexOf(band.id);
     if(index == -1){
       selected.push(band.id)
@@ -31,10 +31,11 @@ class BandList extends React.Component {
   createCard(band){
     return (
       <BandCard  
-        key={band.id} data={band} 
+        key={band.id}
+        data={band} 
         onClick={()=>{this.onCardClick(band)}} 
         onSwapRight={()=>{this.onCardClick(band)}} 
-        selected={this.state.selected.indexOf(band.id) >= 0 ?true:false}
+        selected={this.state.selected.indexOf(band.id) >= 0}
       />
     )
   }

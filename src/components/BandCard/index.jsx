@@ -34,7 +34,7 @@ class BandCard extends React.Component {
   onCardSwap(band){
     // alert("onCardSwap")
     //  this.props.onClick(band)
-    //this.props.onSwapRight(selected)
+    // this.props.onSwapRight(selected)
    // this.props.onSwapLeft(selected)
   }
 
@@ -43,38 +43,39 @@ class BandCard extends React.Component {
     return (
       <Swipe
         className="swipcard"
-        key={"band"+band.id}
+        key={`band${band.id}`}
         onSwipeStart={this.onSwipeStart}
         onSwipeMove={this.onSwipeMove}
-        onSwipeEnd={this.onSwipeEnd}>
-          <div  className={" card " + (this.props.selected == true ?"selected":"")} onClick={()=>{this.onCardClick(band)}}>
-            <img className="card-img" src={band.image} alt={band.name} />
-            <div className="card-body">
-              <h3 className="card-title">{band.name}</h3>
-              <p className="card-text">{band.description}</p>
-            </div>
+        onSwipeEnd={this.onSwipeEnd}
+      >
+        <div  className={` card ${  this.props.selected == true ?"selected":""}`} onClick={()=>{this.onCardClick(band)}}>
+          <img className="card-img" src={band.image} alt={band.name} />
+          <div className="card-body">
+            <h3 className="card-title">{band.name}</h3>
+            <p className="card-text">{band.description}</p>
           </div>
-     </Swipe>
+        </div>
+      </Swipe>
 
     )
   }
 }
 
 BandCard.defaultProps = {
-  bands: []
+  data: [],
+  selected:false,
+  onClick:()=>{}
 };
 
 BandCard.propTypes = {
   onClick:PropTypes.func,
   selected:PropTypes.bool,
-  bands: PropTypes.arrayOf(PropTypes.shape({
-    total_cost: PropTypes.shape({
+  data:  PropTypes.shape({
       id: PropTypes.number,
       name: PropTypes.string,
       description: PropTypes.string,
       image: PropTypes.string
-    })
-  }))
+  })
 };
 
 export default BandCard;

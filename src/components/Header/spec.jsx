@@ -15,5 +15,6 @@ describe('<Header/>', () => {
     expect(wrapper.exists()).to.be.true;
     expect(wrapper.find(DocumentTitle)).to.be.exist;
     expect(wrapper.find('.title')).to.be.exist;
+    
   });
 });

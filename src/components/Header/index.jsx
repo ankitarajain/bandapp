@@ -10,7 +10,7 @@ class Header extends React.Component {
   render() {
     return (
       <div className="app-header-component">
-        <DocumentTitle title="Band Application " />
+        <DocumentTitle title="Band Application" />
         <h3 className="title">Band Application</h3>
       </div>
     );

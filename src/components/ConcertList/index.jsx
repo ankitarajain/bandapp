@@ -11,8 +11,10 @@ class ConcertList extends React.Component {
   
   createCard(concert){
     return (
-      <div  key={concert.id}
-       className="card" >
+      <div
+        key={concert.id}
+        className="card"
+      >
         <div className="card-body">
           <h3 className="card-title">{concert.band_name}</h3>
           <div className="location"><b>Location : </b>{concert.location} </div> 
