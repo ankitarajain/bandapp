@@ -9,7 +9,7 @@ class BandCard extends React.Component {
     super(props);
    
     this.onCardClick = this.onCardClick.bind(this);
-    this.onCardSwap = this.onCardSwap.bind(this);
+   // this.onCardSwap = this.onCardSwap.bind(this);
   }
 
   // onSwipeStart(event) {
