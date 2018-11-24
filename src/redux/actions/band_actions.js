@@ -7,14 +7,12 @@ const getBandList = () => dispatch => {
   });
   return getBands().then(
     bands => {
-      debugger;
       dispatch({
         type: types.BANDS_SUCCESSFULL,
         payload:bands
       });
     },
     err => {
-      debugger;
       dispatch({
         type: types.BANDS_FAILED,
         error: err
