@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import BandCard from '../BandCard'
 import "./style.less";
 
 class BandList extends React.Component {
@@ -8,7 +9,7 @@ class BandList extends React.Component {
     super(props);
     this.state = {
       bands :this.props.bands,
-      selected : []
+      selected : this.props.bands.faviorites ?this.props.bands.faviorites :[]
     }
     this.onCardClick = this.onCardClick.bind(this);
   }
@@ -29,14 +30,12 @@ class BandList extends React.Component {
 
   createCard(band){
     return (
-      <div  key={band.id}
-       className={"card " + (this.state.selected.indexOf(band.id) >= 0 ?"selected":"")} onClick={()=>{this.onCardClick(band)}}>
-        <img className="card-img" src={band.image} alt={band.name} />
-        <div className="card-body">
-          <h3 className="card-title">{band.name}</h3>
-          <p className="card-text">{band.description}</p>
-        </div>
-      </div>
+      <BandCard  
+        key={band.id} data={band} 
+        onClick={()=>{this.onCardClick(band)}} 
+        onSwapRight={()=>{this.onCardClick(band)}} 
+        selected={this.state.selected.indexOf(band.id) >= 0 ?true:false}
+      />
     )
   }
   render() {
