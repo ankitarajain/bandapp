@@ -15,9 +15,9 @@ class ConcertList extends React.Component {
        className="card" >
         <div className="card-body">
           <h3 className="card-title">{concert.band_name}</h3>
-          <p className="location"><b>Location : </b>{concert.location}</p>
-          <p className="date"><b>Date : </b> {concert.date}</p>
-          <p className="time"><b>Time : </b>{concert.time}</p>
+          <div className="location"><b>Location : </b>{concert.location} </div> 
+          <div className="date"><b>Date : </b> {concert.date} </div>
+          <div className="time"><b>Time : </b>{concert.time} </div>
         </div>
       </div>
     )
